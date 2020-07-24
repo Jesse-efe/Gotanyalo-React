@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Gotanyalo-React/static/css/main.cf3e3228.chunk.css",
+    "main.js": "/Gotanyalo-React/static/js/main.4e4dfbfb.chunk.js",
+    "main.js.map": "/Gotanyalo-React/static/js/main.4e4dfbfb.chunk.js.map",
+    "runtime-main.js": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js",
+    "runtime-main.js.map": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js.map",
+    "static/js/2.6fed668e.chunk.js": "/Gotanyalo-React/static/js/2.6fed668e.chunk.js",
+    "static/js/2.6fed668e.chunk.js.map": "/Gotanyalo-React/static/js/2.6fed668e.chunk.js.map",
+    "index.html": "/Gotanyalo-React/index.html",
+    "precache-manifest.fe50820d422b134a4599d78d78585f1e.js": "/Gotanyalo-React/precache-manifest.fe50820d422b134a4599d78d78585f1e.js",
+    "service-worker.js": "/Gotanyalo-React/service-worker.js",
+    "static/css/main.cf3e3228.chunk.css.map": "/Gotanyalo-React/static/css/main.cf3e3228.chunk.css.map",
+    "static/js/2.6fed668e.chunk.js.LICENSE.txt": "/Gotanyalo-React/static/js/2.6fed668e.chunk.js.LICENSE.txt",
+    "static/media/cactus.jpg": "/Gotanyalo-React/static/media/cactus.0f7eec04.jpg",
+    "static/media/house.jpg": "/Gotanyalo-React/static/media/house.b2a13502.jpg",
+    "static/media/onion.jpg": "/Gotanyalo-React/static/media/onion.3fc26379.jpg",
+    "static/media/wrench.jpg": "/Gotanyalo-React/static/media/wrench.ddda4d44.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe6451a1.js",
+    "static/js/2.6fed668e.chunk.js",
+    "static/css/main.cf3e3228.chunk.css",
+    "static/js/main.4e4dfbfb.chunk.js"
+  ]
+}
