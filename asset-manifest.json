@@ -1,17 +1,26 @@
 {
   "files": {
     "main.css": "/Gotanyalo-React/static/css/main.cf3e3228.chunk.css",
-    "main.js": "/Gotanyalo-React/static/js/main.2bcf2c63.chunk.js",
-    "main.js.map": "/Gotanyalo-React/static/js/main.2bcf2c63.chunk.js.map",
+    "main.js": "/Gotanyalo-React/static/js/main.17474662.chunk.js",
+    "main.js.map": "/Gotanyalo-React/static/js/main.17474662.chunk.js.map",
     "runtime-main.js": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js",
     "runtime-main.js.map": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js.map",
-    "static/js/2.1a7b7ce3.chunk.js": "/Gotanyalo-React/static/js/2.1a7b7ce3.chunk.js",
-    "static/js/2.1a7b7ce3.chunk.js.map": "/Gotanyalo-React/static/js/2.1a7b7ce3.chunk.js.map",
+    "static/js/2.eda027ed.chunk.js": "/Gotanyalo-React/static/js/2.eda027ed.chunk.js",
+    "static/js/2.eda027ed.chunk.js.map": "/Gotanyalo-React/static/js/2.eda027ed.chunk.js.map",
     "index.html": "/Gotanyalo-React/index.html",
-    "precache-manifest.414e5165bcbb286dfcb304ffd29b377b.js": "/Gotanyalo-React/precache-manifest.414e5165bcbb286dfcb304ffd29b377b.js",
+    "precache-manifest.ed3fb65ac39ac9f4c08ce0d2c6edd4e0.js": "/Gotanyalo-React/precache-manifest.ed3fb65ac39ac9f4c08ce0d2c6edd4e0.js",
     "service-worker.js": "/Gotanyalo-React/service-worker.js",
     "static/css/main.cf3e3228.chunk.css.map": "/Gotanyalo-React/static/css/main.cf3e3228.chunk.css.map",
-    "static/js/2.1a7b7ce3.chunk.js.LICENSE.txt": "/Gotanyalo-React/static/js/2.1a7b7ce3.chunk.js.LICENSE.txt",
+    "static/js/2.eda027ed.chunk.js.LICENSE.txt": "/Gotanyalo-React/static/js/2.eda027ed.chunk.js.LICENSE.txt",
+    "static/media/Add.d35cd8e4.svg": "/Gotanyalo-React/static/media/Add.d35cd8e4.svg",
+    "static/media/AudioVisual.7efa9e52.svg": "/Gotanyalo-React/static/media/AudioVisual.7efa9e52.svg",
+    "static/media/Business.f547756f.svg": "/Gotanyalo-React/static/media/Business.f547756f.svg",
+    "static/media/Finance.b34fd928.svg": "/Gotanyalo-React/static/media/Finance.b34fd928.svg",
+    "static/media/Games.61c1d640.svg": "/Gotanyalo-React/static/media/Games.61c1d640.svg",
+    "static/media/Mobile.cdb5ac3e.svg": "/Gotanyalo-React/static/media/Mobile.cdb5ac3e.svg",
+    "static/media/Other.4a58e8f0.svg": "/Gotanyalo-React/static/media/Other.4a58e8f0.svg",
+    "static/media/Support.3e6d2d93.svg": "/Gotanyalo-React/static/media/Support.3e6d2d93.svg",
+    "static/media/Website.bf4a226c.svg": "/Gotanyalo-React/static/media/Website.bf4a226c.svg",
     "static/media/cactus.jpg": "/Gotanyalo-React/static/media/cactus.0f7eec04.jpg",
     "static/media/house.jpg": "/Gotanyalo-React/static/media/house.b2a13502.jpg",
     "static/media/onion.jpg": "/Gotanyalo-React/static/media/onion.3fc26379.jpg",
@@ -19,8 +28,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.fe6451a1.js",
-    "static/js/2.1a7b7ce3.chunk.js",
+    "static/js/2.eda027ed.chunk.js",
     "static/css/main.cf3e3228.chunk.css",
-    "static/js/main.2bcf2c63.chunk.js"
+    "static/js/main.17474662.chunk.js"
   ]
 }
