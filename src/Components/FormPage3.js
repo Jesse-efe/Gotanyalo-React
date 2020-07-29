@@ -1,105 +1,120 @@
 import React from "react";
-import Select from "react-select";
-import { ReactComponent as Add } from "../assets/icons/Add.svg";
+import Select from "react-select/creatable";
+import makeAnimated from "react-select/animated";
+import { ButtonGrid, H5, H6, Span, HourInput, FormPage3Container } from "./MyStyledComponents";
 import Button from "./Button";
 
-const FormPage3 = ({ setFormPage, onSubmit }) => {
+const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
   const options = [
     { value:"Web", label: "Web" },
     { value:"Mobile", label: "Mobile" },
     { value:"Data Science", label: "Data Science" }
   ]
 
+  const animatedComponents = makeAnimated();
+
   const myStyles = {
-    control: (styles) => ({ ...styles, width: "100%", marginTop: -12, borderColor: "#000"})
+    control: (styles) => ({ ...styles, width: "100%", marginTop: -12, borderColor: "#000"}),    
   }
 
-  const styles = {
-    container: {
-      display:"grid",
-      gridTemplateColumns:"45% 10% 45%"
-    },
-    input: {
-      width: "97.5%",
-      height: 30,
-      marginTop: 8,
-      borderRadius: 4,
-      borderWidth: 1
-    },
-    hoursPerWeek: {
-      width: "40%",
-      height: 30,
-      borderRadius: 4,
-      borderWidth: 1
-    },
-    buttonGrid: {
-      marginTop: 100,
-      display:"grid",
-      gridTemplateColumns: "50% 50%"
-    }
-  }
   return (
-    <div style={styles.container}>
+    <FormPage3Container>
       <div>
-        <h6>Area of expertise</h6>
+        <H5 marginTop="22px" marginBottom="0">
+          Area of expertise
+          <Span>*</Span>
+        </H5>
+        <H6 marginBottom="15px" color="black">
+          (Select all that apply and type to add to the options)
+        </H6>
         <Select
           options={options}
           styles={myStyles}
-          name="expertise">
+          defaultValue={formDetails.expertise}
+          isMulti
+          closeMenuOnSelect={false}
+          components={animatedComponents}
+          name="expertise"
+          onChange={(e) => handleFormInput({ target: { name: "expertise", value: e }})}
+        >
         </Select>
-        <input
-          type="text"
-          name="expertiseInput"
-          style={styles.input}
-        />
-        <Add style={{marginTop: 3}}/>
-
-        <h6 style={{marginTop: 25}}>Links</h6>
+        <H5 marginTop="25" marginBottom="0">
+          Links
+          <Span>*</Span>
+        </H5>
+        <H6 marginBottom="15px" color="black">(Type links to project. Multiple links allowed.</H6>
         <Select
           styles={myStyles}
-          options={options}
-          name="links">
+          isMulti
+          placeholder="Links to project"
+          closeMenuOnSelect={false}
+          defaultValue={formDetails.links}
+          components={animatedComponents}
+          name="links"
+          onChange={(e) => handleFormInput({ target: { name: "links", value: e }})}
+        >
         </Select>
-        <Add style={{marginTop: 3}}/>
 
-        <h6 style={{marginTop: 90, marginBottom: 2}}>Hours per week</h6>
-        <input
+        <H5 marginTop="90px" marginBottom="2px">
+          Hours per week
+          <Span>*</Span>
+        </H5>
+        <HourInput
           type="text"
           name="hoursPerWeek"
-          style={styles.hoursPerWeek}/>
+          value={formDetails.hoursPerWeek}
+          onChange={(e) => handleFormInput(e)}
+        />
       </div>
 
       <div></div>
       
       <div>
-        <h6>Skills</h6>
+        <H5 marginTop="22px" marginBottom="0">
+          Skills
+          <Span>*</Span>
+        </H5>
+        <H6 marginBottom="15px" color="black">
+          (Select all that apply and type to add to the options)
+        </H6>
         <Select
           styles={myStyles}
           options={options}
-          name="skills">
+          isMulti
+          defaultValue={formDetails.skills}
+          closeMenuOnSelect={false}
+          components={animatedComponents}
+          name="skills"
+          onChange={(e) => handleFormInput({ target: { name: "skills", value: e }})}
+        >
         </Select>
-        <Add style={{marginTop: 3}}/>
 
-        <h6 style={{marginTop: 65}}>Type of Engagement</h6>
+        <H5 marginTop="25" marginBottom="0">
+          Type of Engagement
+          <Span>*</Span>
+        </H5>
+        <H6 marginBottom="15px" color="black">
+          (Select all that apply and type to add to the options)
+        </H6>
         <Select
           styles={myStyles}
           options={options}
-          name="engagementType">
+          isMulti
+          closeMenuOnSelect={false}
+          defaultValue={formDetails.engagementType}
+          components={animatedComponents}
+          name="engagementType"
+          onChange={(e) => handleFormInput({ target: { name: "engagementType", value: e }})}
+        >
         </Select>
-        <input
-          type="text"
-          name="engagementTypeInput"
-          style={styles.input}
-        />
-        <Add style={{marginTop: 3}}/>
 
-        <div style={styles.buttonGrid}>
+        <ButtonGrid marginTop="170px" marginLeft="0">
           <Button backgroundColor="#000000" text="Back" onClick={(e) => setFormPage(1)}></Button>
-          <Button text="Done" onClick={(e) => onSubmit}></Button>
-      </div>
+          <Button text="Done" onClick={(e) => onSubmit(e)}></Button>
+        </ButtonGrid>
       </div>
       
-    </div>
+    </FormPage3Container>
   )
 }
 

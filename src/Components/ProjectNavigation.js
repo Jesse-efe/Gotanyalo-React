@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { P, IconDiv, NavigationGrid } from "./MyStyledComponents";
 import { ReactComponent as Mobile } from "../assets/icons/Mobile.svg";
 import { ReactComponent as AudioVisual } from "../assets/icons/AudioVisual.svg";
 import { ReactComponent as Website } from "../assets/icons/Website.svg";
@@ -9,52 +10,72 @@ import { ReactComponent as Support } from "../assets/icons/Support.svg";
 import { ReactComponent as Other } from "../assets/icons/Other.svg";
 
 
-const ProjectNavigation = () => {
-  const styles = {
-    p: {
-      marginTop: 0,
-      fontSize: "calc(.3em + .4vw)"
-    },
-    icon: {
-      height: 35,
-    }
+const ProjectNavigation = ({ handleFormInput, formDetails, setErrors, errors }) => {
+  const icons = [
+    "mobile",
+    "audioVisual",
+    "website",
+    "games",
+    "business",
+    "finance",
+    "support",
+    "other"
+  ];
+
+  useEffect(() => {
+    const activeClass = document.getElementById(formDetails.projectType);
+    if(activeClass) activeClass.style.backgroundColor = "#ccc";
+  });
+
+
+  const handleClick = ({ target }) => {
+    setErrors({...errors, projectType: ""})
+    icons.forEach(icon => {
+      if(target.parentNode.id === icon || target.parentNode.parentNode.id === icon) {
+        handleFormInput({
+          target: { name: "projectType", value: icon }
+        });
+      }else {
+        document.getElementById(icon).style.backgroundColor = "";
+      }
+    })
   }
   return (
     <>
-      <div style={{display: "grid", gridTemplateColumns: "repeat(8, 1fr)"}}>
-        <div style={{textAlign: "center"}}>
-          <Mobile style={styles.icon}/>
-          <p style={styles.p}>Mobile</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <AudioVisual style={styles.icon}/>
-          <p style={styles.p}>Audio/Visual</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <Website style={styles.icon}/>
-          <p style={styles.p}>Website</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <Games style={styles.icon}/>
-          <p style={styles.p}>Mobile Games</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <Business style={styles.icon}/>
-          <p style={styles.p}>Business</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <Finance style={styles.icon}/>
-          <p style={styles.p}>Finance</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <Support style={styles.icon}/>
-          <p style={styles.p}>Support/Assistance</p>
-        </div>
-        <div style={{textAlign: "center"}}>
-          <Other style={styles.icon}/>
-          <p style={styles.p}>Other</p>
-        </div>
-      </div>
+      <NavigationGrid>
+        <IconDiv id="mobile" onClick={(e) => handleClick(e)}>
+          <Mobile style={{ height: "5vh", width: "3vw" }}/>
+          <P>Mobile</P>
+        </IconDiv>
+        <IconDiv id="audioVisual" onClick={(e) => handleClick(e)}>
+          <AudioVisual style={{ height: "5vh", width: "3vw" }}/>
+          <P>Audio/Visual</P>
+        </IconDiv>
+        <IconDiv id="website" onClick={(e) => handleClick(e)}>
+          <Website style={{ height: "5vh", width: "3vw" }}/>
+          <P>Website</P>
+        </IconDiv>
+        <IconDiv id="games" onClick={(e) => handleClick(e)}>
+          <Games style={{ height: "5vh", width: "3vw" }}/>
+          <P>Mobile Games</P>
+        </IconDiv>
+        <IconDiv id="business" onClick={(e) => handleClick(e)}>
+          <Business style={{ height: "5vh", width: "3vw" }}/>
+          <P>Business</P>
+        </IconDiv>
+        <IconDiv id="finance" onClick={(e) => handleClick(e)}>
+          <Finance style={{ height: "5vh", width: "3vw" }}/>
+          <P>Finance</P>
+        </IconDiv>
+        <IconDiv id="support" onClick={(e) => handleClick(e)}>
+          <Support style={{ height: "5vh", width: "3vw" }}/>
+          <P>Support/Assistance</P>
+        </IconDiv>
+        <IconDiv id="other" onClick={(e) => handleClick(e)}>
+          <Other style={{ height: "5vh", width: "3vw" }}/>
+          <P>Other</P>
+        </IconDiv>
+      </NavigationGrid>
     </>
   )
 }
