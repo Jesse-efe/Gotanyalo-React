@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04ebc98a2361371f90c3dde0a5e8cf15",
+    "revision": "bcaf8c5606cf631ec39345966df871d9",
     "url": "/Gotanyalo-React/index.html"
   },
   {
-    "revision": "5e30b665c2d2aa235c13",
-    "url": "/Gotanyalo-React/static/css/main.cf3e3228.chunk.css"
+    "revision": "7cb8d29c64d5d6416ff9",
+    "url": "/Gotanyalo-React/static/css/main.14ac7d85.chunk.css"
   },
   {
-    "revision": "ba000b84831ca7b10c7f",
-    "url": "/Gotanyalo-React/static/js/2.eda027ed.chunk.js"
+    "revision": "d4517811126e545e8260",
+    "url": "/Gotanyalo-React/static/js/2.3a64a03f.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Gotanyalo-React/static/js/2.eda027ed.chunk.js.LICENSE.txt"
+    "url": "/Gotanyalo-React/static/js/2.3a64a03f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5e30b665c2d2aa235c13",
-    "url": "/Gotanyalo-React/static/js/main.17474662.chunk.js"
+    "revision": "7cb8d29c64d5d6416ff9",
+    "url": "/Gotanyalo-React/static/js/main.224f9cb4.chunk.js"
   },
   {
     "revision": "df56e945c3ab9a4bbb6a",
@@ -62,6 +62,26 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0f7eec04d00cbd9ec784007500b8c282",
     "url": "/Gotanyalo-React/static/media/cactus.0f7eec04.jpg"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/Gotanyalo-React/static/media/fontawesome-webfont.674f50d2.eot"
+  },
+  {
+    "revision": "912ec66d7572ff821749319396470bde",
+    "url": "/Gotanyalo-React/static/media/fontawesome-webfont.912ec66d.svg"
+  },
+  {
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "/Gotanyalo-React/static/media/fontawesome-webfont.af7ae505.woff2"
+  },
+  {
+    "revision": "b06871f281fee6b241d60582ae9369b9",
+    "url": "/Gotanyalo-React/static/media/fontawesome-webfont.b06871f2.ttf"
+  },
+  {
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/Gotanyalo-React/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
     "revision": "b2a13502bad8c6dd45876b9a91d8cf84",
