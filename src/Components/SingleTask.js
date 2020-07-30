@@ -22,7 +22,7 @@ class SingleTask extends Component {
                                 <span className="pull-right btn btn-xs btn-white" onClick={this.props.complete}>Mark</span>
                             }
                             <span className="pull-right btn btn-xs btn-white" onClick={this.props.editTask}>Edit</span>
-                            <i className="fa fa-clock-o"></i> 12.10.2015
+                            <i className="fa fa-clock-o"></i> {this.props.task.date}
                         </div>
                     </li>
                 )}
