@@ -35,6 +35,11 @@ class Kanban extends Component {
         this.setState(updatedData);
     };
 
+    getCurrentDate = () => {
+        const now = new Date();
+        return `${now.getDate().toString().padStart(2, '0')}.${(now.getMonth() + 1).toString().padStart(2, '0')}.${now.getFullYear()}`;
+    }
+
     addTask = task => {
         // a request should be made to the backend at this point to add the task
         // the id of the new task should be returned as responce
@@ -43,6 +48,7 @@ class Kanban extends Component {
         const taskObject = {
             id,
             content: task,
+            date: this.getCurrentDate(),
         }
         const updatedTasks = {
             ...this.state,
