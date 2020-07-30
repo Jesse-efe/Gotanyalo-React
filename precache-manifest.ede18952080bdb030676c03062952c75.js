@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bcaf8c5606cf631ec39345966df871d9",
+    "revision": "959bfbe4b701b9f6ac932e9aca3a6be2",
     "url": "/Gotanyalo-React/index.html"
   },
   {
-    "revision": "7cb8d29c64d5d6416ff9",
+    "revision": "06fdd0ceab0ece1e892c",
     "url": "/Gotanyalo-React/static/css/main.14ac7d85.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Gotanyalo-React/static/js/2.3a64a03f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7cb8d29c64d5d6416ff9",
-    "url": "/Gotanyalo-React/static/js/main.224f9cb4.chunk.js"
+    "revision": "06fdd0ceab0ece1e892c",
+    "url": "/Gotanyalo-React/static/js/main.fc2f3601.chunk.js"
   },
   {
     "revision": "df56e945c3ab9a4bbb6a",
