@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { H5, H6, Span, Textarea } from "./MyStyledComponents";
+import { H5, H6, SingleButtonDiv, Span, Textarea } from "./MyStyledComponents";
 import ProjectNavigation from "./ProjectNavigation";
 import Button from "./Button";
 
@@ -20,7 +20,7 @@ const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
   const handleNext = (e) => {
     let foundErrors = {};
     for (let field of requiredFields) {
-      if(formDetails[field] === "") {
+      if(formDetails[field].trim() === "") {
         switch(field) {
           case "projectType":
             foundErrors.projectType = "Please pick a project type";
@@ -46,7 +46,7 @@ const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
         Tell us what project you're working on
         <Span>*</Span>
       </H5>
-      {errors.projectType !== "" && <H6>{errors.projectType}</H6>}
+      {errors.projectType !== "" && <H6 center="true">{errors.projectType}</H6>}
       <ProjectNavigation
         handleFormInput={handleFormInput}
         formDetails={formDetails}
@@ -58,7 +58,7 @@ const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
         Project/Product description
         <Span>*</Span>
       </H5>
-      {errors.description !== "" && <H6>{errors.description}</H6>}
+      {errors.description !== "" && <H6 marginBottom="2px">{errors.description}</H6>}
       <Textarea
         name="description"
         onChange={(e) => handleFormInput(e)}
@@ -71,7 +71,7 @@ const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
         What is preferred way to work? Remote and or Onsite? Why?
         <Span>*</Span>
       </H5>
-      {errors.workPreference !== "" && <H6>{errors.workPreference}</H6>}
+      {errors.workPreference !== "" && <H6 marginBottom="2px">{errors.workPreference}</H6>}
       <Textarea
         name="workPreference"
         onChange={(e) => handleFormInput(e)}
@@ -80,9 +80,9 @@ const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
       >
       </Textarea>
       
-      <div style={{marginTop: 20, marginLeft: "70%"}}>
+      <SingleButtonDiv>
         <Button width="85%" text="Next" onClick={(e) => handleNext(e)} />
-      </div>
+      </SingleButtonDiv>
     </>
   )
 }

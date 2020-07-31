@@ -21,8 +21,17 @@ const FormPage2 = ({ setFormPage, formDetails, handleFormInput }) => {
   const handleNext = (e) => {
     let foundErrors = {};
     for (let field of requiredFields) {
-      if(formDetails[field] === "") {
-        foundErrors[field] = "This field is required";
+      if(formDetails[field].trim() === "") {
+        switch(field) {
+          case "budget":
+            foundErrors.budget = "Please give us an estimate of your budget";
+            break;
+          case "obstacles":
+            foundErrors.obstacles = "Please tell us what obstacles you have faced so far.";
+            break;
+          default:
+            break;
+        }
       }
     };
 
@@ -30,7 +39,7 @@ const FormPage2 = ({ setFormPage, formDetails, handleFormInput }) => {
     const projectDate = new Date(dateString).toString();
 
     if(projectDate === "Invalid Date") {
-      // foundErrors.startDate = "Please enter a valid date";
+      foundErrors.startDate = "Please enter a valid date";
     }
 
     setErrors({ ...errors, ...foundErrors });
@@ -42,9 +51,7 @@ const FormPage2 = ({ setFormPage, formDetails, handleFormInput }) => {
         Budget
         <Span>*</Span>
       </H5>
-      {errors.budget !== "" &&
-        <H6>{errors.budget}</H6>
-      }
+      {errors.budget !== "" && <H6 marginBottom="2px">{errors.budget}</H6>}
       <Textarea
         name="budget"
         value={formDetails.budget}
@@ -57,7 +64,7 @@ const FormPage2 = ({ setFormPage, formDetails, handleFormInput }) => {
         Start Date
         <Span>*</Span>
       </H5>
-      {errors.startDate !== "" && <H6>{errors.startDate}</H6>}
+      {errors.startDate !== "" && <H6 marginBottom="2px">{errors.startDate}</H6>}
       <StartDateGrid>
         <div style={{textAlign: "center"}}>
           <H5 marginTop="0" marginBottom="0">Month</H5>
@@ -104,7 +111,7 @@ const FormPage2 = ({ setFormPage, formDetails, handleFormInput }) => {
         What issues  or obstacles (if any) have you had with this product/project?
         <Span>*</Span>
       </H5>
-      {errors.obstacles !== "" && <H6>{errors.obstacles}</H6>}
+      {errors.obstacles !== "" && <H6 marginBottom="2px">{errors.obstacles}</H6>}
       <Textarea
         name="obstacles"
         value={formDetails.obstacles}
