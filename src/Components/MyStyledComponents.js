@@ -4,6 +4,9 @@ export const H5 = styled.h5`
   margin-top: ${props => props.marginTop || "30px"};
   margin-bottom: ${props => props.marginBottom || "5px"};
   font-size: calc(.7vw + 6px);
+  @media (max-width: 600px) {
+    text-align: ${props => props.center ? "center" : ""};
+  }
 `;
 
 export const H6 = styled.h6`
@@ -80,16 +83,13 @@ export const StartDateGrid = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  padding-bottom: 25px;
+  padding: 20px 5% 25px 5%;
   width: 50%;
   background-color: #fff;
-  margin: 25vh auto 25vh;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin: 10vh auto 10vh;
   box-shadow: 5px 5px 5px 0 lightgrey;
-  @media (max-width: 360px) {
+  @media (max-width: 1024px) {
     width: 70%;
-
   }
 `;
 
