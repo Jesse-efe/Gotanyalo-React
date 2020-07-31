@@ -42,7 +42,7 @@ const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
 
   return (
     <>
-      <H5>
+      <H5 center="true">
         Tell us what project you're working on
         <Span>*</Span>
       </H5>

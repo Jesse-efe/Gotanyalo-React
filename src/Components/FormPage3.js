@@ -24,7 +24,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
           Area of expertise
           <Span>*</Span>
         </H5>
-        <H6 marginBottom="15px" color="black">
+        <H6 marginBottom="15px" color="#2f4050;">
           (Select all that apply and type to add to the options)
         </H6>
         <Select
@@ -42,7 +42,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
           Links
           <Span>*</Span>
         </H5>
-        <H6 marginBottom="15px" color="black">(Type links to project. Multiple links allowed.</H6>
+        <H6 marginBottom="15px" color="#2f4050;">(Type links to project. Multiple links allowed.</H6>
         <Select
           styles={myStyles}
           isMulti
@@ -74,7 +74,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
           Skills
           <Span>*</Span>
         </H5>
-        <H6 marginBottom="15px" color="black">
+        <H6 marginBottom="15px" color="#2f4050;">
           (Select all that apply and type to add to the options)
         </H6>
         <Select
@@ -93,7 +93,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
           Type of Engagement
           <Span>*</Span>
         </H5>
-        <H6 marginBottom="15px" color="black">
+        <H6 marginBottom="15px" color="#2f4050;">
           (Select all that apply and type to add to the options)
         </H6>
         <Select
