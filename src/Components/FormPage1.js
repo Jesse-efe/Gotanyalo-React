@@ -1,32 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
+import { H5, H6, Span, Textarea } from "./MyStyledComponents";
 import ProjectNavigation from "./ProjectNavigation";
 import Button from "./Button";
 
-const FormPage1 = ({ setFormPage }) => {
-  const styles = {
-    textArea: {
-      width: "95%",
-      resize: "none",
-      overflow: "scroll"
-    },
-    h6: {
-      marginTop: 30,
-      marginBottom: 5
-    }
+
+const FormPage1 = ({ setFormPage, handleFormInput, formDetails }) => {
+  const [errors, setErrors] = useState({
+    projectType: "",
+    description: "",
+    workPreference: ""
+  });
+
+  const requiredFields = ["projectType", "description", "workPreference"]
+
+  const handleFocus = ({ target: { name } }) => {
+    setErrors({...errors, [name]: ""})
   }
+
+  const handleNext = (e) => {
+    let foundErrors = {};
+    for (let field of requiredFields) {
+      if(formDetails[field] === "") {
+        switch(field) {
+          case "projectType":
+            foundErrors.projectType = "Please pick a project type";
+            break;
+          case "description":
+            foundErrors.description = "Give us a description of the project";
+            break;
+          case "workPreference":
+            foundErrors.workPreference = "Please tell us what your work preference is. Remote or onsite.";
+            break;
+          default:
+            break;
+        }
+      }
+    };
+    setErrors({ ...errors, ...foundErrors});
+    if(Object.values(foundErrors).length === 0) return setFormPage(1)
+  }
+
   return (
     <>
-      <h6>Tell us what project you're working on.</h6>
-      <ProjectNavigation />
+      <H5>
+        Tell us what project you're working on
+        <Span>*</Span>
+      </H5>
+      {errors.projectType !== "" && <H6>{errors.projectType}</H6>}
+      <ProjectNavigation
+        handleFormInput={handleFormInput}
+        formDetails={formDetails}
+        errors={errors}
+        setErrors={setErrors}
+      />
       
-      <h6 style={styles.h6}>Project/Product description</h6>
-      <textarea style={{...styles.textArea, height: 64}} name="description"></textarea>
+      <H5>
+        Project/Product description
+        <Span>*</Span>
+      </H5>
+      {errors.description !== "" && <H6>{errors.description}</H6>}
+      <Textarea
+        name="description"
+        onChange={(e) => handleFormInput(e)}
+        onFocus={(e) => handleFocus(e)}
+        value={formDetails.description}
+      >
+      </Textarea>
       
-      <h6 style={styles.h6}>What is preferred way to work? Remote and or Onsite? Why?</h6>
-      <textarea style={{...styles.textArea, height: 36}} name="workPreference"></textarea>
+      <H5>
+        What is preferred way to work? Remote and or Onsite? Why?
+        <Span>*</Span>
+      </H5>
+      {errors.workPreference !== "" && <H6>{errors.workPreference}</H6>}
+      <Textarea
+        name="workPreference"
+        onChange={(e) => handleFormInput(e)}
+        onFocus={(e) => handleFocus(e)}
+        value={formDetails.workPreference}        
+      >
+      </Textarea>
       
       <div style={{marginTop: 20, marginLeft: "70%"}}>
-        <Button width="85%" text="Next" onClick={(e) => setFormPage(1)} />
+        <Button width="85%" text="Next" onClick={(e) => handleNext(e)} />
       </div>
     </>
   )
