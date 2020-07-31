@@ -122,7 +122,7 @@ fieldset[disabled] .btn-white.active {
 }
 
 body {
-    background-color: #2f4050;
+    /* background-color: #2f4050; */
     font-size: 13px;
     color: #676a6c;
     overflow-x: hidden;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormContainer } from "../Components/MyStyledComponents";
 import FormPage1 from "../Components/FormPage1";
 import FormPage2 from "../Components/FormPage2";
@@ -23,6 +23,15 @@ const FormComponent = () => {
   const [formPage, setFormPage] = useState(0);
   const [formDetails, setFormDetails] = useState(defaultState);
 
+  useEffect(() => {
+    fetch("https://formendpoints.herokuapp.com/form_fields")
+    .then(response => {
+      return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+  })
+
   const submitForm = (e) => {
     e.preventDefault();
     setFormDetails(defaultState);
@@ -30,8 +39,8 @@ const FormComponent = () => {
     console.log(formDetails);
   }
 
-  const handleFormInput = (e) => {
-    setFormDetails({...formDetails, [e.target.name]: e.target.value });
+  const handleFormInput = ({ target: { name, value }}) => {
+    setFormDetails({...formDetails, [name]: value });
   }
   return(
     <FormContainer>
