@@ -1,31 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "959bfbe4b701b9f6ac932e9aca3a6be2",
+    "revision": "7afa33e8ee65d8866b4250ea43004227",
     "url": "/Gotanyalo-React/index.html"
   },
   {
-    "revision": "06fdd0ceab0ece1e892c",
+    "revision": "22daa1099ab27cb7d3e7",
     "url": "/Gotanyalo-React/static/css/main.14ac7d85.chunk.css"
   },
   {
-    "revision": "d4517811126e545e8260",
-    "url": "/Gotanyalo-React/static/js/2.3a64a03f.chunk.js"
+    "revision": "799fd578644b2f28e208",
+    "url": "/Gotanyalo-React/static/js/2.6a4e377d.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Gotanyalo-React/static/js/2.3a64a03f.chunk.js.LICENSE.txt"
+    "url": "/Gotanyalo-React/static/js/2.6a4e377d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "06fdd0ceab0ece1e892c",
-    "url": "/Gotanyalo-React/static/js/main.fc2f3601.chunk.js"
+    "revision": "22daa1099ab27cb7d3e7",
+    "url": "/Gotanyalo-React/static/js/main.ad991673.chunk.js"
   },
   {
     "revision": "df56e945c3ab9a4bbb6a",
     "url": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js"
-  },
-  {
-    "revision": "d35cd8e4ac1697fe75074573ef2f2b40",
-    "url": "/Gotanyalo-React/static/media/Add.d35cd8e4.svg"
   },
   {
     "revision": "7efa9e52dc365a688c8b8ffc895f0d50",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Gotanyalo-React/precache-manifest.ede18952080bdb030676c03062952c75.js"
+  "/Gotanyalo-React/precache-manifest.94952c06cb31119371989b3db7311433.js"
 );
 
 self.addEventListener('message', (event) => {
