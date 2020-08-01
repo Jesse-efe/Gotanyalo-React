@@ -5,15 +5,27 @@ import KanbanColumn from '../Components/KanbanColumn';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 class Kanban extends Component {
-    state = kanbanData;
+    state = {
+        data: kanbanData,
+        isMobile: false,
+    };
+
+    componentDidMount() {
+        window.addEventListener("resize", this.resize);
+        this.resize();
+    }
+    
+    resize = () => {
+        this.setState({isMobile: window.innerWidth <= 600});
+    }
 
     onDragEnd = result => {
         const { destination, source } = result;
         if(!destination) return;
         if(destination.droppableId === source.droppableId && destination.index === source.index)return;
 
-        const startColumn = this.state[source.droppableId];
-        const endColumn = this.state[destination.droppableId];
+        const startColumn = this.state.data[source.droppableId];
+        const endColumn = this.state.data[destination.droppableId];
         const newStartColumn = [ ...startColumn ];
         const movedTask = newStartColumn.splice(source.index, 1);
         let newEndColumn;
@@ -28,11 +40,11 @@ class Kanban extends Component {
         }
 
         const updatedData = {
-            ...this.state,
+            ...this.state.data,
             [destination.droppableId]: newEndColumn,
             [source.droppableId]: newStartColumn,
         }
-        this.setState(updatedData);
+        this.setState({data: updatedData});
     };
 
     getCurrentDate = () => {
@@ -51,41 +63,40 @@ class Kanban extends Component {
             date: this.getCurrentDate(),
         }
         const updatedTasks = {
-            ...this.state,
-            toDo: [ ...this.state.toDo, taskObject]
+            ...this.state.data,
+            toDo: [ ...this.state.data.toDo, taskObject]
         }
-        this.setState(updatedTasks);
+        this.setState({data: updatedTasks});
     }
 
-    editTask = (taskId, index, content, columnName) => {
+    editTask = (task, index, newContent, columnName) => {
         // a request should be made to the backend at this point to edit the task
-        const targetColumn = this.state[columnName];
-        targetColumn.splice(index, 1, {id: taskId, content})
+        const targetColumn = this.state.data[columnName];
+        targetColumn.splice(index, 1, {id: task.id, date: task.date, content: newContent})
         const updatedTasks = {
-            ...this.state,
+            ...this.state.data,
             [columnName]: targetColumn,
         }
-        this.setState(updatedTasks);
+        this.setState({data: updatedTasks});
     }
 
     completeTask = (index, currentColumn) => {
         // a request should be made to the backend at this point to complete the task
-        const sourceColumn = this.state[currentColumn];
+        const sourceColumn = this.state.data[currentColumn];
         const targetTask = sourceColumn.splice(index, 1);
-        const targetColumn = this.state.completed;
+        const targetColumn = this.state.data.completed;
         targetColumn.push(targetTask[0]);
 
         const updatedTasks = {
-            ...this.state,
+            ...this.state.data,
             [currentColumn]: sourceColumn,
             completed: targetColumn,
         }
-        // console.log(updatedTasks);
-        this.setState(updatedTasks);
+        this.setState({data: updatedTasks});
     }
 
     renderColumns = () => {
-        const data = this.state;
+        const data = this.state.data;
         const columns = [];
         for(const column in data) {
             const columnTasks = data[column];
@@ -97,6 +108,7 @@ class Kanban extends Component {
                 columnName={column}
                 editTask={this.editTask}
                 completeTask={this.completeTask}
+                isMobile={this.state.isMobile}
             />);
         }
         return columns;
@@ -105,8 +117,23 @@ class Kanban extends Component {
     render() {
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
-                <div className="row">
-                    {this.renderColumns()}
+                <div 
+                    id="kanbanCarousel" 
+                    className="carousel slide" 
+                    data-ride="carousel" 
+                    data-wrap="false" 
+                    data-interval="false"
+                >
+                    <ol className="carousel-indicators">
+                        <li data-target="#kanbanCarousel" data-slide-to="0" className="active"></li>
+                        <li data-target="#kanbanCarousel" data-slide-to="1"></li>
+                        <li data-target="#kanbanCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div className="carousel-inner">
+                        <div className="row">
+                            {this.renderColumns()}
+                        </div>
+                    </div>
                 </div>
             </DragDropContext>
         );

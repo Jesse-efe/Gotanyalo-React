@@ -9,10 +9,10 @@ class KanbanColumn extends Component {
     };
 
     addTask = () => {
-        const { newTask, isEdittingTask, editTargetId, editTargetIndex } = this.state;
+        const { newTask, isEdittingTask, editTargetIndex, editTargetTask } = this.state;
         if(newTask.trim() === '') return;
         if(isEdittingTask) {
-            this.props.editTask(editTargetId, editTargetIndex, newTask, this.props.columnName);
+            this.props.editTask(editTargetTask, editTargetIndex, newTask, this.props.columnName);
             this.setState({
                 newTask: '', 
                 isEdittingTask: false
@@ -31,7 +31,7 @@ class KanbanColumn extends Component {
         this.setState({
             isEdittingTask: true,
             newTask: task.content,
-            editTargetId: task.id,
+            editTargetTask: task,
             editTargetIndex: index,
         });
     }
@@ -71,8 +71,11 @@ class KanbanColumn extends Component {
             inProgress: 'In Progress',
             completed: 'Completed',
         }
+        const isMobile = this.props.isMobile ? 'carousel-item' : '';
+        const columnName = (isMobile && this.props.columnName === 'toDo') ? 'active' : '';
+
         return (
-            <div className="col-md-4">
+            <div className={`col-12 col-md-4 ${isMobile} ${columnName}`}>
                 <div className="ibox">
                     <div className="ibox-content">
                         <h3>{nameMap[this.props.columnName]}</h3>

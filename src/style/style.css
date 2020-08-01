@@ -99,6 +99,26 @@ fieldset[disabled] .btn-primary.active {
     background-image: none;
 }
 
+.btn-xs{
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+  .btn-sm{
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+  .input-sm{
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+
 .btn-white.disabled,
 .btn-white.disabled:hover,
 .btn-white.disabled:focus,
@@ -119,18 +139,6 @@ fieldset[disabled] .btn-white.active {
 
 .btn:focus {
     outline: none !important;
-}
-
-body {
-    /* background-color: #2f4050; */
-    font-size: 13px;
-    color: #676a6c;
-    overflow-x: hidden;
-}
-
-html,
-body {
-    height: 100%;
 }
 
 .border-bottom {
