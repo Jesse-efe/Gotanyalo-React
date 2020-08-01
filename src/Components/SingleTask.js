@@ -18,10 +18,10 @@ class SingleTask extends Component {
                         {this.props.task.content}
                         <div className="agile-detail">
                             {this.props.isCompleted ? 
-                                <span href="#" className="pull-right btn btn-xs btn-primary">Done</span> :
-                                <span className="pull-right btn btn-xs btn-white" onClick={this.props.complete}>Mark</span>
+                                <span className="float-right btn btn-xs btn-primary">Done</span> :
+                                <span className="float-right btn btn-xs btn-white" onClick={this.props.complete}>Mark</span>
                             }
-                            <span className="pull-right btn btn-xs btn-white" onClick={this.props.editTask}>Edit</span>
+                            <span className="float-right btn btn-xs btn-white" onClick={this.props.editTask}>Edit</span>
                             <i className="fa fa-clock-o"></i> {this.props.task.date}
                         </div>
                     </li>

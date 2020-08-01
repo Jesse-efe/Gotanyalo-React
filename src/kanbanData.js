@@ -1,3 +1,4 @@
+//temporary data representing data that would gotten from backend
 const data = {
     toDo: [
         {id: 1, content: 'Update source control', date: '02.04.2020'},
