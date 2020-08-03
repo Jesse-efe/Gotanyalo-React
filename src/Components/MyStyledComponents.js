@@ -6,7 +6,8 @@ export const H5 = styled.h5`
   font-size: calc(.7vw + 6px);
   @media (max-width: 600px) {
     text-align: ${props => props.center ? "center" : ""};
-    margin-top: ${props => props.mobile ? "50px": (props.marginTop || "30px") }
+    margin-top: ${props => props.mobile ? "50px": (props.marginTop || "30px") };
+    font-size: calc(2vw + 6px);
   }
 `;
 
@@ -78,6 +79,12 @@ export const IconDiv = styled.div`
 export const P = styled.p`
   margin-top: 0;
   font-size: calc(5px + .4vw);
+  @media (max-width: 1024px) {
+    font-size: calc(6px + .6vw);
+  }
+  @media (max-width: 600px) {
+    font-size: calc(1.5vw + 6px);
+  }
 `;
 
 export const NavigationGrid = styled.div`
@@ -100,8 +107,9 @@ export const FormContainer = styled.div`
   background-color: #fff;
   margin: 10vh auto 10vh;
   box-shadow: 5px 5px 5px 0 lightgrey;
+  overflow-x: hidden;
   @media (max-width: 1024px) {
-    width: 70%;
+    width: 80%;
   }
   @media (max-width: 600px) {
     padding-left: 5%;
