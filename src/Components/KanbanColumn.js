@@ -75,7 +75,7 @@ class KanbanColumn extends Component {
         const columnName = (isMobile && this.props.columnName === 'toDo') ? 'active' : '';
 
         return (
-            <div className={`col-12 col-md-4 ${isMobile} ${columnName}`}>
+            <div className={`col-md-4 column ${columnName}`}>
                 <div className="ibox">
                     <div className="ibox-content">
                         <h3>{nameMap[this.props.columnName]}</h3>

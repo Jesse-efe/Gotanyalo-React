@@ -37,9 +37,23 @@ body>*{
   border-radius: 50%;
   display: none;
 }
+.kanban{
+  background-color: #2f4050;
+  min-height: 100%;
+}
 @media (max-width: 600px) {
-  .carousel{
-    min-height: 100vh;
+  .row{
+    display: flex;
+    width: 300vw;
+    overflow: scroll;
+    flex-wrap: nowrap;
+    
+  }
+  .column{
+    min-width: 100vw;
+    padding-right: 0;
+    padding-left: 15px;
+    box-sizing: border-box;
   }
   .carousel-indicators{
     position: absolute;

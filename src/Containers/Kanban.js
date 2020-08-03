@@ -117,23 +117,8 @@ class Kanban extends Component {
     render() {
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
-                <div 
-                    id="kanbanCarousel" 
-                    className="carousel slide" 
-                    data-ride="carousel" 
-                    data-wrap="false" 
-                    data-interval="false"
-                >
-                    <ol className="carousel-indicators">
-                        <li data-target="#kanbanCarousel" data-slide-to="0" className="active"></li>
-                        <li data-target="#kanbanCarousel" data-slide-to="1"></li>
-                        <li data-target="#kanbanCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <div className="carousel-inner">
-                        <div className="row">
-                            {this.renderColumns()}
-                        </div>
-                    </div>
+                <div className="row kanban">
+                    {this.renderColumns()}
                 </div>
             </DragDropContext>
         );
