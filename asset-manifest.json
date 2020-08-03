@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Gotanyalo-React/static/css/main.36d95f93.chunk.css",
-    "main.js": "/Gotanyalo-React/static/js/main.a284082a.chunk.js",
-    "main.js.map": "/Gotanyalo-React/static/js/main.a284082a.chunk.js.map",
+    "main.js": "/Gotanyalo-React/static/js/main.a4399347.chunk.js",
+    "main.js.map": "/Gotanyalo-React/static/js/main.a4399347.chunk.js.map",
     "runtime-main.js": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js",
     "runtime-main.js.map": "/Gotanyalo-React/static/js/runtime-main.fe6451a1.js.map",
     "static/js/2.813d76dc.chunk.js": "/Gotanyalo-React/static/js/2.813d76dc.chunk.js",
     "static/js/2.813d76dc.chunk.js.map": "/Gotanyalo-React/static/js/2.813d76dc.chunk.js.map",
     "index.html": "/Gotanyalo-React/index.html",
-    "precache-manifest.f7fb224c6404eafe4e954b0911e8464f.js": "/Gotanyalo-React/precache-manifest.f7fb224c6404eafe4e954b0911e8464f.js",
+    "precache-manifest.4bda7eb52d9204fc7fa87baaff83b569.js": "/Gotanyalo-React/precache-manifest.4bda7eb52d9204fc7fa87baaff83b569.js",
     "service-worker.js": "/Gotanyalo-React/service-worker.js",
     "static/css/main.36d95f93.chunk.css.map": "/Gotanyalo-React/static/css/main.36d95f93.chunk.css.map",
     "static/js/2.813d76dc.chunk.js.LICENSE.txt": "/Gotanyalo-React/static/js/2.813d76dc.chunk.js.LICENSE.txt",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.fe6451a1.js",
     "static/js/2.813d76dc.chunk.js",
     "static/css/main.36d95f93.chunk.css",
-    "static/js/main.a284082a.chunk.js"
+    "static/js/main.a4399347.chunk.js"
   ]
 }
