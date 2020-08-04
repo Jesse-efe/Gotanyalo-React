@@ -23,20 +23,59 @@ const FormComponent = () => {
   const [formPage, setFormPage] = useState(0);
   const [formDetails, setFormDetails] = useState(defaultState);
 
-  useEffect(() => {
-    fetch("https://formendpoints.herokuapp.com/form_fields")
-    .then(response => {
-      return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
+  /* Change the data here to your preferred defaults for the select
+    elements of the form on page 3. Simply keep the data structure.
+  */
+  const [backendLists, setBackendLists] = useState({
+    skills: [
+      { value:"Web", label: "Web" },
+      { value:"Mobile", label: "Mobile" },
+      { value:"Data Science", label: "Data Science" }
+    ],
+    expertise: [
+      { value:"Web", label: "Web" },
+      { value:"Mobile", label: "Mobile" },
+      { value:"Data Science", label: "Data Science" }
+    ],
+    engagementType: [
+      { value:"Web", label: "Web" },
+      { value:"Mobile", label: "Mobile" },
+      { value:"Data Science", label: "Data Science" }
+    ],
   })
 
-  const submitForm = (e) => {
+  /* Enable this function and change the api url to the correct endpoint that supplies
+     data in the format of the defaults declared above
+  */
+  // useEffect(() => {
+  //   const fetchdata = async () => {
+  //     try{
+  //       const response = await fetch("https://formendpoints.herokuapp.com/form_fields");
+  //       const lists = await response.json();
+  //       setBackendLists({ ...backendLists, ...lists }); 
+  //     }catch(error) {
+  //       console.log(error);
+  //     }
+  //   }
+
+  //   fetchdata();
+  // });
+
+  const submitForm = async (e) => {
     e.preventDefault();
     setFormDetails(defaultState);
     setFormPage(0);
-    console.log(formDetails);
+    
+    /*
+      Uncomment lines and add the correct url to send form details to
+    */
+    // await fetch("https://formendpoints.herokuapp.com/form_fields", {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(formDetails)
+    // });
   }
 
   const handleFormInput = ({ target: { name, value }}) => {
@@ -64,6 +103,7 @@ const FormComponent = () => {
               handleFormInput={handleFormInput}
               formDetails={formDetails}
               onSubmit={submitForm}
+              options={backendLists}
             />
           )
       }
