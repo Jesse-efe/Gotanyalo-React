@@ -4,7 +4,7 @@ import makeAnimated from "react-select/animated";
 import { ButtonGrid, H5, H6, Span, HourInput, FormPage3Container } from "./MyStyledComponents";
 import Button from "./Button";
 
-const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
+const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails, options}) => {
   const [errors, setErrors] = useState({
     expertise: "",
     skills: "",
@@ -19,11 +19,6 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
   }
 
   const requiredFields = ["expertise", "skills", "engagementType", "hoursPerWeek"]
-  const options = [
-    { value:"Web", label: "Web" },
-    { value:"Mobile", label: "Mobile" },
-    { value:"Data Science", label: "Data Science" }
-  ]
 
   const animatedComponents = makeAnimated();
 
@@ -78,7 +73,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
           (Select all that apply and type to add to the options)
         </H6>
         <Select
-          options={options}
+          options={options.expertise}
           styles={myStyles}
           defaultValue={formDetails.expertise}
           isMulti
@@ -121,7 +116,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
         </H6>
         <Select
           styles={myStyles}
-          options={options}
+          options={options.skills}
           isMulti
           defaultValue={formDetails.skills}
           closeMenuOnSelect={false}
@@ -142,7 +137,7 @@ const FormPage3 = ({ setFormPage, onSubmit, handleFormInput, formDetails}) => {
         </H6>
         <Select
           styles={myStyles}
-          options={options}
+          options={options.engagementType}
           isMulti
           closeMenuOnSelect={false}
           defaultValue={formDetails.engagementType}
