@@ -71,11 +71,9 @@ class KanbanColumn extends Component {
             inProgress: 'In Progress',
             completed: 'Completed',
         }
-        const isMobile = this.props.isMobile ? 'carousel-item' : '';
-        const columnName = (isMobile && this.props.columnName === 'toDo') ? 'active' : '';
 
         return (
-            <div className={`col-md-4 column ${columnName}`}>
+            <div className={`col-md-4 column`}>
                 <div className="ibox">
                     <div className="ibox-content">
                         <h3>{nameMap[this.props.columnName]}</h3>

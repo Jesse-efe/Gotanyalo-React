@@ -7,17 +7,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 class Kanban extends Component {
     state = {
         data: kanbanData,
-        isMobile: false,
     };
-
-    componentDidMount() {
-        window.addEventListener("resize", this.resize);
-        this.resize();
-    }
-    
-    resize = () => {
-        this.setState({isMobile: window.innerWidth <= 600});
-    }
 
     onDragEnd = result => {
         const { destination, source } = result;
@@ -108,7 +98,6 @@ class Kanban extends Component {
                 columnName={column}
                 editTask={this.editTask}
                 completeTask={this.completeTask}
-                isMobile={this.state.isMobile}
             />);
         }
         return columns;
